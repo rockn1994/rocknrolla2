@@ -9,6 +9,11 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+app.set('views',__dirname +'/views');
+app.use(express.static('views'));
+
 // defining the variable which are reusable for making another rest api call
 var welcome = 'hommie he wants today s post';
 var token='52e1f90f486f9384fc474bb12e81e6f13ab17047b456df9386249201e485956c';
@@ -34,6 +39,10 @@ app.get('/todaypost',function(req,res){
   });
 
 });
+
+app.get('/',function(req,res){
+  res.render('index');
+  });
 
 // server details for the terminal
 var server = app.listen(8081,function(){
