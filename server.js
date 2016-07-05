@@ -37,7 +37,7 @@ app.get('/todaypost',function(req,res){
 
 app.get('/',function(req,res){
   res.render('index');
-  });
+});
 
 // server details for the terminal
 var server = app.listen(8081,function(){
