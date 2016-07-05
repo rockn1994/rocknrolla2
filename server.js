@@ -3,11 +3,6 @@ var request = require('request');
 var app = express();
 
 // the cors fix
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
